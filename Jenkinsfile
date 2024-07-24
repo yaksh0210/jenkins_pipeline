@@ -20,7 +20,7 @@ pipeline {
         
                     withEnv(["PATH+MAVEN=${MAVEN_HOME}\\bin"]) {
         
-                        sh 'mvn clean package'
+                        sh 'mvn clean'
                     }
                 }
             }
