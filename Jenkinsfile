@@ -2,7 +2,7 @@ pipeline {
     agent any
  
     environment {
-        MAVEN_HOME = tool 'Maven-3.9.0' // Ensure this matches your Maven tool name
+        MAVEN_HOME = tool 'Maven - 3.9.0' // Ensure this matches your Maven tool name
     }
  
     stages {
@@ -20,7 +20,7 @@ pipeline {
         
                     withEnv(["PATH+MAVEN=${MAVEN_HOME}\\bin"]) {
         
-                        sh 'mvn clean'
+                        sh 'mvn clean package'
                     }
                 }
             }
