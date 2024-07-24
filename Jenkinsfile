@@ -12,7 +12,15 @@ pipeline {
                 git url: 'https://github.com/yaksh0210/training_jenkins_tasks.git', branch: 'main'
             }
         }
- 
+        
+        stage("install"){
+            steps{
+                dir("simple-java-maven-app"){
+                    sh "mvn clean install"
+                }
+            }
+        }
+
         stage('Build') {
             steps {
                 // Build the project using Maven
@@ -23,6 +31,7 @@ pipeline {
                 }
             }
         }
+
  
         stage('Archive Artifacts') {
             steps {
