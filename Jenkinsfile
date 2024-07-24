@@ -13,19 +13,13 @@ pipeline {
             }
         }
         
-        stage("install"){
-            steps{
-                dir("simple-java-maven-app"){
-                    sh "mvn clean install"
-                }
-            }
-        }
-
         stage('Build') {
             steps {
-                // Build the project using Maven
+        
                 script {
+        
                     withEnv(["PATH+MAVEN=${MAVEN_HOME}\\bin"]) {
+        
                         sh 'mvn clean package'
                     }
                 }
@@ -35,7 +29,7 @@ pipeline {
  
         stage('Archive Artifacts') {
             steps {
-                // Archive the built artifacts
+        |
                 archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
             }
         }
