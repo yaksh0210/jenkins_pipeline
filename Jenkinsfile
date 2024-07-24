@@ -9,7 +9,7 @@ pipeline {
         stage('Checkout') {
             steps {
                 // Checkout code from GitHub repository
-                git url: 'https://github.com/nkheria/DevOpsClassCodes.git', branch: 'master'
+                git url: 'https://github.com/yaksh0210/training_jenkins_tasks.git', branch: 'main'
             }
         }
  
