@@ -18,7 +18,7 @@ pipeline {
                 // Build the project using Maven
                 script {
                     withEnv(["PATH+MAVEN=${MAVEN_HOME}\\bin"]) {
-                        bat 'mvn clean package'
+                        sh 'mvn clean package'
                     }
                 }
             }
