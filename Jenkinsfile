@@ -1,4 +1,3 @@
-[10:45] Farajnazish Ansari
 pipeline {
 
     agent any
